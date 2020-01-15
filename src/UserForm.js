@@ -1,11 +1,25 @@
 import React, { useState } from 'react'
 
 const UserForm = () => {
-  const [state, setstate] = useState({})
+  const [state, setState] = useState({})
   return (
-    <form className='form-inline'>
-      <label for='username'>Username</label>
-      <input value={state.username || ''} />
+    <form
+      className='form-inline'
+      onSubmit={(event) => {
+        event.preventDefault()
+        console.log('form submitted')
+      }}
+    >
+      <label htmlFor='username-input'>Username</label>
+      <input
+        name='username'
+        id='username-input'
+        value={state.username || ''}
+        onChange={(event) => {
+          setState({ [event.target.name]: event.target.value })
+        }}
+      />
+      <button type='submit' className='btn btn-primary'>Submit</button>
     </form>
   )
 }
