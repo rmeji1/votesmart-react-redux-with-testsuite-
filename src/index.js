@@ -8,6 +8,7 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import thunk from 'react-thunk'
 
+// TODO: Import reducer and add it to datastore
 const api = 'https://votesmartflatiron.herokuapp.com/'
 const store = createStore(null, applyMiddleware(thunk).withExtraArgument(api))
 
