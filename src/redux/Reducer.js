@@ -4,7 +4,7 @@ import * as types from './Types'
 export const initialState = {
   userId: '',
   federal: null,
-  proPublicaId: null,
+  proPublicaId: '',
   billId: null
 }
 
@@ -28,8 +28,10 @@ const isFederal = (federal = initialState.federal, action) => {
 
 const editProPublicaId = (proPublicaId = initialState.proPublicaId, action) => {
   switch (action.type) {
-    // case value:
-    //   break;
+    case types.ADD_PRO_PUBLICA_ID:
+      return action.proPublicaId
+    case types.REMOVE_PRO_PUBLICA_ID:
+      return initialState.proPublicaId
     default:
       return proPublicaId;
   }

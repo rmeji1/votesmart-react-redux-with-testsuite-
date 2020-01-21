@@ -33,5 +33,35 @@ describe('federal reduce', () => {
       federal: true
     }).federal).toEqual(testState.federal)
   })
+
+  test('should set federal to false', () => {
+    const testState = { federal: false }
+    expect(reducer(undefined, {
+      type: types.IS_FEDERAL,
+      federal: false
+    }).federal).toEqual(testState.federal)
+  })
+})
+
+describe('ProPublicaId reducer', () => {
+  test('should be set to empty string', () => {
+    expect(reducer(undefined, {}).proPublicaId).toEqual('')
+  })
+
+  test('should set proPublicaId to some value', () => {
+    const testState = { proPublicaId: 'TEST123' }
+    expect(reducer(undefined, {
+      type: types.ADD_PRO_PUBLICA_ID,
+      proPublicaId: testState.proPublicaId
+    }).proPublicaId).toEqual(testState.proPublicaId)
+  })
+
+  test('should set proPublicaId back to initial state of ""', () => {
+    const testState = { proPublicaId: '' }
+    expect(reducer(undefined, {
+      type: types.REMOVE_PRO_PUBLICA_ID
+    }).proPublicaId).toEqual(testState.proPublicaId)
+  })
+  
 })
 
