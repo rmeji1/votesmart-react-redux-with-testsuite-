@@ -1,4 +1,6 @@
 export const ADD_USER_ID = 'ADD_USER_ID'
-export const IS_FEDERAL= 'IS_FEDERAL'
+export const IS_FEDERAL = 'IS_FEDERAL'
 export const ADD_PRO_PUBLICA_ID = 'ADD_PRO_PUBLICA_ID'
 export const REMOVE_PRO_PUBLICA_ID = 'REMOVE_PRO_PUBLICA_ID'
+export const ADD_BILL_ID = 'ADD_BILL_ID'
+export const REMOVE_BILL_ID = 'REMOVE_BILL_ID'

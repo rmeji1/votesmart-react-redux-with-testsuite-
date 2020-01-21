@@ -63,5 +63,24 @@ describe('ProPublicaId reducer', () => {
     }).proPublicaId).toEqual(testState.proPublicaId)
   })
   
+  describe('Bill Reducer', () => {
+    test('should have bill id as empty string as initial state', () => {
+      expect(reducer(undefined, {}).billId).toEqual('')
+    })
+
+    test('should set bill id', () => {
+      const testState = { billId: 'test' }
+      expect(reducer(undefined, {
+        type: types.ADD_BILL_ID,
+        billId: testState.billId
+      }).billId).toEqual(testState.billId)
+    })
+  })
+
+  test('should set bill id to initial state on removal', () => {
+    expect(reducer(undefined, {
+      type: types.REMOVE_BILL_ID
+    }).billId).toBe('')
+  });
 })
 

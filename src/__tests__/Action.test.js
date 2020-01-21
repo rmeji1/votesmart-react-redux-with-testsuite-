@@ -9,6 +9,8 @@ describe('test user actions', () => {
     }
     expect(actions.addUserId(1)).toEqual(expectedAction)
   })
+
+  test.todo('should remove user id')
 })
 
 describe('federal actions', () => {
@@ -43,3 +45,9 @@ describe('proPublicaId actions', () => {
     })
   })
 })
+
+describe('Bill id tests', () => {
+  test.todo('should set action to add bill id')
+  test.todo('should set action to remove bill id')
+})
+

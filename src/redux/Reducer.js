@@ -5,7 +5,7 @@ export const initialState = {
   userId: '',
   federal: null,
   proPublicaId: '',
-  billId: null
+  billId: ''
 }
 
 const editUserId = (userId = initialState.userId, action) => {
@@ -39,8 +39,10 @@ const editProPublicaId = (proPublicaId = initialState.proPublicaId, action) => {
 
 const editBillId = (billId = initialState.billId, action) =>{
   switch (action.type) {
-    // case value:     
-    //   break;
+    case types.ADD_BILL_ID:
+      return action.billId   
+    case types.REMOVE_BILL_ID:
+      return initialState.billId  
     default:
       return billId
   }
