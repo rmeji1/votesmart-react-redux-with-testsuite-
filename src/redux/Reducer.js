@@ -19,6 +19,8 @@ const editUserId = (userId = initialState.userId, action) => {
 
 const isFederal = (federal = initialState.federal, action) => {
   switch (action.type){
+    case types.IS_FEDERAL:
+      return action.federal
     default: 
       return federal
   }

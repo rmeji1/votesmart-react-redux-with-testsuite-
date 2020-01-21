@@ -11,3 +11,12 @@ describe('test user actions', () => {
   })
 })
 
+describe('federal actions', () => {
+  test('should create action to set fedreral to true', () => {
+    const expectedAction = {
+      type: types.IS_FEDERAL,
+      federal: true
+    }
+    expect(actions.setFederalTo(true)).toEqual(expectedAction)
+  })
+})
