@@ -1,16 +1,22 @@
-import Reducer, { initialState } from "../redux/Reducer"
+import reducer, { initialState } from "../redux/Reducer"
+import * as types from '../redux/Types'
 
 test('should exists', () => {
-  expect(Reducer).toBeTruthy()
+  expect(reducer).toBeTruthy()
 })
 
-test('should have an initial state', () => {
-  const testState = {
-    userId: '',
-    federal: null,
-    proPublicaId: null,
-    billId: null
-  }
+describe('user id reducer', () => {
+  test('should have an initial state', () => {
+    const testState = {
+      userId: ''
+    }
+    expect(reducer(undefined, {}).userId).toEqual(testState.userId)
+  })
 
-  expect(initialState).toEqual(testState)
+  test('should update user id', () => {
+    const testState = { userId: 1 }
+    expect(reducer(undefined, { type: types.ADD_USER_ID, userId: 1}).userId)
+      .toEqual(testState.userId)
+  })
 })
+
